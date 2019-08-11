@@ -1,5 +1,11 @@
 const express = require('express')
 const app = express()
+const mongoose = require('mongoose')
+const database = require('./config/database')
+
+mongoose.connect(database.url, {
+    useNewUrlParser: true
+})
 
 app.use(require('./routes'))
 
