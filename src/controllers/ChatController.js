@@ -1,10 +1,4 @@
-const AssistantV1 = require("watson-developer-cloud/assistant/v1");
-
-const watsonAssistant = new AssistantV1({
-    iam_apikey: "lAAlHSGKOE9Aax6jrvzx0lZqlqYUXn5MchNYDR5XOP3q",
-    version: "2018-02-16",
-    url: "https://gateway.watsonplatform.net/assistant/api"
-});
+const watson = require("../config/client-watson");
 
 module.exports = {
     async store(req, res) {
@@ -16,7 +10,7 @@ module.exports = {
             context
         };
 
-        watsonAssistant.message(params, (err, response) => {
+        watson.message(params, (err, response) => {
             if (err) res.status(500).json(err);
             res.json(response);
         });
