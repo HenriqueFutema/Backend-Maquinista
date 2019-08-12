@@ -1,9 +1,10 @@
-const express = require('express')
-const routes = express.Router()
+const express = require("express");
+const routes = express.Router();
 
-const UserController = require('./controllers/UserController')
+const UserController = require("./controllers/UserController");
+const ChatController = require("./controllers/ChatController");
 
+routes.get("/users", UserController.index);
+routes.post("/message", ChatController.store);
 
-routes.get('/users', UserController.index)
-
-module.exports = routes
+module.exports = routes;
