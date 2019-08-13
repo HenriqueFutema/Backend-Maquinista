@@ -17,5 +17,6 @@ routes.get("/users", UserController.index);
 routes.post("/message", ChatController.store);
 
 routes.post("/chat/msg", MessageController.store);
+routes.get("/chat/:id", UserController.show);
 
 module.exports = routes;
