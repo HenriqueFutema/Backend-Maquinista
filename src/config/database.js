@@ -1,3 +1,3 @@
 module.exports = {
-    url: 'mongodb://maquinista:adm123@ds147044.mlab.com:47044/maquinista'
-}
+    url: "mongodb+srv://adm123:adm123@maquinista-mx2w6.mongodb.net/test?retryWrites=true&w=majority"
+};
