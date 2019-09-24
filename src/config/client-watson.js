@@ -1,9 +1,9 @@
-const AssistantV1 = require("watson-developer-cloud/assistant/v1");
+const AssistantV2 = require("watson-developer-cloud/assistant/v2");
 
-const watsonAssistant = new AssistantV1({
-    iam_apikey: "lAAlHSGKOE9Aax6jrvzx0lZqlqYUXn5MchNYDR5XOP3q",
-    version: "2018-02-16",
-    url: "https://gateway-wdc.watsonplatform.net/assistant/api"
+const watsonAssistant = new AssistantV2({
+    iam_apikey: "Zz90FkYdRNiCFEFiHwUXVwnKx6rxIAWRoQPNAZd4NnE6",
+    version: "v2",
+    url: "https://gateway.watsonplatform.net/assistant/api"
 });
 
 module.exports = watsonAssistant;
