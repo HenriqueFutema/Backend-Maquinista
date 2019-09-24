@@ -6,15 +6,19 @@ const authConfig = require("../config/auth");
 const UserSchema = mongoose.Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
     email: {
         type: String,
-        require: true
+        required: true
     },
     password: {
         type: String,
-        require: true
+        required: true
+    },
+    session_id: {
+        type: String,
+        required: false
     },
     chat: [{ type: mongoose.Schema.Types.ObjectId, ref: "Message" }]
 });

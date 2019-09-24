@@ -1,16 +1,26 @@
 const User = require("../models/User");
+const watson = require("../config/client-watson");
 
 module.exports = {
     async store(req, res) {
-        const { email } = req.body;
+        const { name, email, password } = req.body;
 
         if (await User.findOne({ email })) {
             return res.status(400).json("Email já cadastrado");
         }
 
-        const user = await User.create(req.body);
+        const session_id = await watson.createSession({
+            assistant_id: "cbacde9f-0add-44c6-b4a6-cc41af707e04"
+        });
 
-        res.status(200).json(user);
+        const user = await User.create({
+            name,
+            email,
+            password,
+            session_id: session_id.session_id
+        });
+
+        return res.status(200).json(user);
     },
 
     async index(req, res) {
