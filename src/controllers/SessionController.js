@@ -1,4 +1,6 @@
 const User = require("../models/User");
+const watson = require("../config/client-watson");
+
 
 module.exports = {
     async store(req, res) {
@@ -14,6 +16,11 @@ module.exports = {
             return res.status(400).json({ error: "Senha inválida" });
         }
 
-        return res.json({ user, token: User.generateToken(user) });
+        const session_id = await watson.createSession({
+            assistant_id: "cbacde9f-0add-44c6-b4a6-cc41af707e04"
+        });
+
+
+        return res.json({ user, token: User.generateToken(user), session_id });
     }
 };

@@ -11,8 +11,6 @@ const authMiddleware = require("./middleware/auth");
 routes.post("/signup", UserController.store);
 routes.post("/signin", SessionController.store);
 
-routes.use(authMiddleware);
-
 routes.get("/users", UserController.index);
 routes.post("/message", ChatController.store);
 
