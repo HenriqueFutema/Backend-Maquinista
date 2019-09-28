@@ -24,11 +24,11 @@ module.exports = {
                     text: text
                 }
             })
-            .then(res => {
-                console.log(JSON.stringify(res, null, 2));
+            .then(response => {
+                return res.json({ response, session });
             })
             .catch(err => {
-                console.log(err);
+                return res.json(err);
             });
     }
 };
