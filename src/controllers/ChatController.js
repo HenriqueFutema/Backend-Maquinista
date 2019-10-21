@@ -6,7 +6,7 @@ module.exports = {
 
         if (!req.body.session_id) {
             const session_id = await watson.createSession({
-                assistant_id: "cbacde9f-0add-44c6-b4a6-cc41af707e04"
+                assistant_id: "0ad920b4-7a98-4d39-8acd-5dea5adfc016"
             });
             session = session_id.session_id;
         } else {
@@ -15,9 +15,9 @@ module.exports = {
 
         console.log(session);
 
-        watson
+        await watson
             .message({
-                assistant_id: "cbacde9f-0add-44c6-b4a6-cc41af707e04",
+                assistant_id: "0ad920b4-7a98-4d39-8acd-5dea5adfc016",
                 session_id: session,
                 input: {
                     message_type: "text",

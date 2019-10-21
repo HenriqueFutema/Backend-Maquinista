@@ -16,5 +16,5 @@ app.use(cors());
 app.use(require("./routes"));
 
 app.listen(process.env.PORT || 3333, () => {
-    console.log("Porta 3000");
+    console.log("Porta 3333");
 });
